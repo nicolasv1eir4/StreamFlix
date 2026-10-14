@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StreamFlix - descubra filmes e séries para assistir.">
+    <title>StreamFlix | Filmes e Séries</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="#" aria-label="StreamFlix início">STREAM<span>FLIX</span></a>
+
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#catalogo">Filmes e séries</a>
+            <a href="#favoritos">Minha lista</a>
+        </nav>
+
+        <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Buscar títulos..." aria-label="Buscar títulos">
+        </label>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="eyebrow">STREAMFLIX ORIGINAL</span>
+                <p class="hero-kicker">UMA NOVA EXPERIÊNCIA DE ENTRETENIMENTO</p>
+                <h1>Grandes histórias.<br><span>Momentos inesquecíveis.</span></h1>
+                <p class="hero-description">
+                    Explore universos incríveis, descubra novos favoritos
+                    e encontre sua próxima história.
+                </p>
+                <a class="primary-button" href="#catalogo">▶ Explorar catálogo</a>
+            </div>
+            <div class="hero-decoration" aria-hidden="true">SF</div>
+        </section>
+
+        <section class="catalog-section" id="catalogo">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">ESCOLHA SUA PRÓXIMA HISTÓRIA</p>
+                    <h2>Explore o catálogo</h2>
+                </div>
+                <span id="result-count" class="result-count"></span>
+            </div>
+
+            <div class="filters" aria-label="Filtrar catálogo">
+                <button class="filter active" data-filter="Todos">Todos</button>
+                <button class="filter" data-filter="Filme">Filmes</button>
+                <button class="filter" data-filter="Série">Séries</button>
+                <button class="filter" data-filter="Ação">Ação</button>
+                <button class="filter" data-filter="Drama">Drama</button>
+                <button class="filter" data-filter="Ficção científica">Ficção científica</button>
+                <button class="filter" data-filter="Animação">Animação</button>
+            </div>
+
+            <div class="movie-grid" id="movie-grid"></div>
+            <p id="empty-message" class="empty-message" hidden>
+                Nenhum título encontrado. Tente outra pesquisa.
+            </p>
+        </section>
+
+        <section class="catalog-section favorites-section" id="favoritos">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">GUARDE SEUS PREFERIDOS</p>
+                    <h2>Minha lista</h2>
+                </div>
+            </div>
+            <div class="movie-grid" id="favorite-grid"></div>
+            <p id="favorite-empty" class="empty-message">
+                Você ainda não adicionou favoritos. Use o ♡ nos títulos do catálogo.
+            </p>
+        </section>
+    </main>
+
+    <dialog id="details-dialog" class="details-dialog">
+        <button class="close-dialog" id="close-dialog" aria-label="Fechar detalhes">×</button>
+        <img id="detail-image" class="detail-image" src="" alt="">
+        <div class="detail-content">
+            <p class="eyebrow" id="detail-type"></p>
+            <h2 id="detail-title"></h2>
+            <p class="detail-meta" id="detail-meta"></p>
+            <p id="detail-description"></p>
+            <a id="trailer-link" class="primary-button trailer-button"
+               href="#" target="_blank" rel="noopener noreferrer">▶ Ver trailer</a>
+        </div>
+    </dialog>
+
+    <footer>
+        <a class="logo" href="#inicio">STREAM<span>FLIX</span></a>
+        <p>Seu próximo favorito está aqui.</p>
+        <small>Projeto educacional • 2026</small>
+    </footer>
+</body>
+</html>
